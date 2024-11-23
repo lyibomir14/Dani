@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Як стати членом нашого комьюніті</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .form-container {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        input[type="text"], input[type="email"], input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+        .thank-you {
+            display: none;
+        }
+        .circle-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-top: 30px;
+        }
+        .thank-you a {
+            display: block; 
+            margin-bottom: 20px; 
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="main-heading">Як стати членом нашого комьюніті</h1>
+    <p id="form-instruction">Введіть свої дані</p>
+
+    <div class="form-container">
+        <form id="joinForm">
+            <label for="firstName">Ім’я</label>
+            <input type="text" id="firstName" name="firstName" required>
+
+            <label for="lastName">Прізвище</label>
+            <input type="text" id="lastName" name="lastName" required>
+
+            <label for="phone">Номер телефону</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="email">Пошта</label>
+            <input type="email" id="email" name="email" required>
+
+            <button type="submit" class="submit-btn">Відправити</button>
+        </form>
+    </div>
+
+    
+    <img src="vhod1.jpg" alt="Картинка входу 1" class="circle-image" id="firstImage">
+
+    <div class="thank-you">
+        <h2>Вітаємо!</h2>
+        <p>Протягом тижня ми зв'яжемося з вами і розповімо всі подробиці.</p>
+        <p>Перейдіть за посиланням, щоб побачити карту:</p>
+        <a href="https://www.google.com/maps" target="_blank">Google карта</a>
+
+        
+        <img src="vhod2.jpg" alt="Картинка входу 2" class="circle-image" id="secondImage">
+    </div>
+
+    <script>
+        document.getElementById("joinForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            document.getElementById("main-heading").style.display = "none";
+            document.getElementById("form-instruction").style.display = "none";
+
+ 
+            document.querySelector(".form-container").style.display = "none";
+            document.getElementById("firstImage").style.display = "none";
+
+   
+            document.querySelector(".thank-you").style.display = "block";
+        });
+    </script>
+
+</body>
+</html>
